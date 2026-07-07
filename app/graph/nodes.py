@@ -316,7 +316,8 @@ async def response_node(state: LumiState) -> dict:
     elif intent == "tool":
         # Tool 응답: Tool 실행 결과 포함
         tool_result = state["tool_result"]
-        tool_name = state["tool_name"]  # noqa: F841
+        tool_name = state["tool_name"]
+        logger.debug(f"Executing tool: {tool_name}")
 
         # Tool 결과를 자연스러운 응답으로 변환하기 위한 컨텍스트
         result_context = f"""
