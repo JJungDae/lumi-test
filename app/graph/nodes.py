@@ -124,7 +124,7 @@ async def router_node(state: LumiState) -> dict:
                 # LLM이 가끔 유니코드 따옴표('', "", '')를 반환함
                 tool_name = tool_name.strip()
                 # 다양한 따옴표 문자 제거 (일반 + 유니코드)
-                quote_chars = "'\"`'''\"\"「」『』"
+                quote_chars = r"'\"`'''\"\"「」『』"
                 tool_name = tool_name.strip(quote_chars)
                 # 중간에 있는 따옴표도 제거 (예: get_schedule')
                 for char in quote_chars:
